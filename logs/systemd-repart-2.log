@@ -1,0 +1,17 @@
+Oct 02 09:50:32 nixos systemd[1]: Starting Repartition Root Disk...
+Oct 02 09:50:32 nixos systemd-repart[154]: No machine ID set, using randomized partition UUIDs.
+Oct 02 09:50:32 nixos systemd-repart[154]: TYPE          LABEL     UUID                                 PARTNO FILE        RAW SIZE      SIZE PADDING
+Oct 02 09:50:32 nixos systemd-repart[154]: home          home      ace3ff5a-ef31-4d4e-a8b4-15e87fe71dc9 2      home.conf 7158276096      6.6G 0B
+Oct 02 09:50:32 nixos systemd-repart[154]: var           var       1b622723-1422-4a00-be82-c14a85a9c11d 3      var.conf  3579142144      3.3G 0B
+Oct 02 09:50:32 nixos systemd-repart[154]: esp           boot      dac4058a-2fc0-4808-a7ef-b8b4501c00ce 0                 209715200      200M 0B
+Oct 02 09:50:32 nixos systemd-repart[154]: linux-generic nix-store be6595b1-70b2-4c1e-a455-2693510a426f 1                 359964672    343.2M 0B
+Oct 02 09:50:32 nixos systemd-repart[154]:                                                                                          Σ = 10.5G Σ = 0B
+Oct 02 09:50:32 nixos systemd-repart[154]:  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░
+Oct 02 09:50:32 nixos systemd-repart[154]:  │  │                                                 │
+Oct 02 09:50:32 nixos systemd-repart[154]:  └─ boot                                              │
+Oct 02 09:50:32 nixos systemd-repart[154]:     │                                                 └─ var.conf
+Oct 02 09:50:32 nixos systemd-repart[154]:     └─ home.conf
+Oct 02 09:50:32 nixos systemd-repart[154]: No changes.
+Oct 02 09:50:32 nixos systemd[1]: Finished Repartition Root Disk.
+Oct 02 09:50:34 nixos systemd[1]: systemd-repart.service: Deactivated successfully.
+Oct 02 09:50:34 nixos systemd[1]: Stopped Repartition Root Disk.

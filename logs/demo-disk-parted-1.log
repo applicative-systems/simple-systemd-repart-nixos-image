@@ -1,0 +1,11 @@
+                                                                                                                                                    [?2004hFix/Ignore? i
+[?2004lModel:  (file)
+Disk /home/tfc/src/asg/images/standalone/demo-disk.raw: 11.3GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End    Size   File system  Name       Flags
+ 1      1049kB  211MB  210MB  fat32        boot       boot, esp
+ 2      211MB   571MB  360MB               nix-store
+

@@ -1,0 +1,12 @@
+Model:  (file)
+Disk /home/tfc/src/asg/images/standalone/demo-disk.raw: 11.3GB
+Sector size (logical/physical): 512B/512B
+Partition Table: gpt
+Disk Flags: 
+
+Number  Start   End     Size    File system  Name       Flags
+ 1      1049kB  211MB   210MB   fat32        boot       boot, esp
+ 2      211MB   571MB   360MB                nix-store
+ 3      571MB   7729MB  7158MB  ext4         home       linux-home
+ 4      7729MB  11.3GB  3579MB  ext4         var
+

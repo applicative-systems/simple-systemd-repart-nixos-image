@@ -1,0 +1,53 @@
+Oct 02 09:47:14 nixos systemd[1]: Starting Repartition Root Disk...
+Oct 02 09:47:14 nixos systemd-repart[152]: No machine ID set, using randomized partition UUIDs.
+Oct 02 09:47:14 nixos systemd-repart[152]: TYPE          LABEL     UUID                                 PARTNO FILE        RAW SIZE      SIZE PADDING
+Oct 02 09:47:14 nixos systemd-repart[152]: home          home      ace3ff5a-ef31-4d4e-a8b4-15e87fe71dc9 2      home.conf 7158276096    → 6.6G → 0B
+Oct 02 09:47:14 nixos systemd-repart[152]: var           var       1b622723-1422-4a00-be82-c14a85a9c11d 3      var.conf  3579142144    → 3.3G → 0B
+Oct 02 09:47:14 nixos systemd-repart[152]: esp           boot      dac4058a-2fc0-4808-a7ef-b8b4501c00ce 0                 209715200      200M 0B
+Oct 02 09:47:14 nixos systemd-repart[152]: linux-generic nix-store be6595b1-70b2-4c1e-a455-2693510a426f 1                 359964672    343.2M 10G → 0B
+Oct 02 09:47:14 nixos systemd-repart[152]:                                                                                          Σ = 10.5G Σ = 0B
+Oct 02 09:47:14 nixos systemd-repart[152]:  ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░
+Oct 02 09:47:14 nixos systemd-repart[152]:  │  │                                                 │
+Oct 02 09:47:14 nixos systemd-repart[152]:  └─ boot                                              │
+Oct 02 09:47:14 nixos systemd-repart[152]:     │                                                 └─ var.conf
+Oct 02 09:47:14 nixos systemd-repart[152]:     └─ home.conf
+Oct 02 09:47:14 nixos systemd-repart[152]: Applying changes to /dev/sda.
+Oct 02 09:47:14 nixos systemd-repart[152]: Successfully wiped file system signatures from future partition 2.
+Oct 02 09:47:14 nixos systemd-repart[152]: Successfully discarded data from future partition 2.
+Oct 02 09:47:14 nixos systemd-repart[152]: Successfully wiped file system signatures from future partition 3.
+Oct 02 09:47:14 nixos systemd-repart[152]: Successfully discarded data from future partition 3.
+Oct 02 09:47:14 nixos systemd-repart[152]: Successfully discarded gap after partition 3.
+Oct 02 09:47:14 nixos systemd-repart[152]: Formatting future partition 2.
+Oct 02 09:47:14 nixos systemd-repart[154]: mke2fs 1.47.3 (8-Jul-2025)
+Oct 02 09:47:14 nixos systemd-repart[154]: Creating filesystem with 1747626 4k blocks and 437184 inodes
+Oct 02 09:47:14 nixos systemd-repart[154]: Filesystem UUID: dc1fd050-a246-4868-91b8-fc8b625de9ba
+Oct 02 09:47:14 nixos systemd-repart[154]: Superblock backups stored on blocks:
+Oct 02 09:47:14 nixos systemd-repart[154]:         32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632
+Oct 02 09:47:14 nixos systemd-repart[154]: [49B blob data]
+Oct 02 09:47:14 nixos systemd-repart[154]: [46B blob data]
+Oct 02 09:47:14 nixos systemd-repart[154]: Creating journal (16384 blocks): done
+Oct 02 09:47:14 nixos systemd-repart[154]: [83B blob data]
+Oct 02 09:47:14 nixos systemd-repart[152]: /dev/loop0 successfully formatted as ext4 (label "home", uuid dc1fd050-a246-4868-91b8-fc8b625de9ba)
+Oct 02 09:47:14 nixos systemd-repart[152]: Successfully formatted future partition 2.
+Oct 02 09:47:14 nixos systemd-repart[152]: Syncing future partition 2 contents to disk.
+Oct 02 09:47:14 nixos systemd-repart[152]: Formatting future partition 3.
+Oct 02 09:47:14 nixos systemd-repart[158]: mke2fs 1.47.3 (8-Jul-2025)
+Oct 02 09:47:14 nixos systemd-repart[158]: Creating filesystem with 873814 4k blocks and 218592 inodes
+Oct 02 09:47:14 nixos systemd-repart[158]: Filesystem UUID: 352f65f5-a4c6-4f66-98b6-a3866154644d
+Oct 02 09:47:14 nixos systemd-repart[158]: Superblock backups stored on blocks:
+Oct 02 09:47:14 nixos systemd-repart[158]:         32768, 98304, 163840, 229376, 294912, 819200
+Oct 02 09:47:14 nixos systemd-repart[158]: [49B blob data]
+Oct 02 09:47:14 nixos systemd-repart[158]: [46B blob data]
+Oct 02 09:47:14 nixos systemd-repart[158]: Creating journal (16384 blocks): done
+Oct 02 09:47:14 nixos systemd-repart[158]: [83B blob data]
+Oct 02 09:47:14 nixos systemd-repart[152]: /dev/loop1 successfully formatted as ext4 (label "var", uuid 352f65f5-a4c6-4f66-98b6-a3866154644d)
+Oct 02 09:47:14 nixos systemd-repart[152]: Successfully formatted future partition 3.
+Oct 02 09:47:14 nixos systemd-repart[152]: Syncing future partition 3 contents to disk.
+Oct 02 09:47:14 nixos systemd-repart[152]: Adding new partition 2 to partition table.
+Oct 02 09:47:14 nixos systemd-repart[152]: Adding new partition 3 to partition table.
+Oct 02 09:47:14 nixos systemd-repart[152]: Writing new partition table.
+Oct 02 09:47:14 nixos systemd-repart[152]: Telling kernel to reread partition table.
+Oct 02 09:47:14 nixos systemd-repart[152]: All done.
+Oct 02 09:47:14 nixos systemd[1]: Finished Repartition Root Disk.
+Oct 02 09:47:14 nixos systemd[1]: systemd-repart.service: Deactivated successfully.
+Oct 02 09:47:14 nixos systemd[1]: Stopped Repartition Root Disk.
