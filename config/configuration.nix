@@ -11,4 +11,6 @@
 
   services.getty.autologinUser = "root";
   users.users.root.initialPassword = "";
+
+  system.stateVersion = "25.11";
 }
