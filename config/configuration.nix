@@ -4,6 +4,7 @@
     (modulesPath + "/profiles/image-based-appliance.nix")
     ./filesystems.nix
     ./image.nix
+    ./desktop.nix
   ];
 
   boot.loader.grub.enable = false;
