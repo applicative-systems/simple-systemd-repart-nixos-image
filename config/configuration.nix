@@ -5,6 +5,7 @@
     ./filesystems.nix
     ./image.nix
     ./desktop.nix
+    ./size-reduction.nix
   ];
 
   boot.loader.grub.enable = false;

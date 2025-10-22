@@ -1,36 +1,42 @@
 {
   lib,
   pkgs,
-  config,
+  modulesPath,
   ...
 }:
 {
-#  hardware.graphics.enable = false;
-#  services.speechd.enable = false;
-#  services.pipewire.enable = false;
-#  services.libinput.enable = false;
-#
-#  xdg.autostart.enable = lib.mkForce false;
-#  xdg.menus.enable = lib.mkForce false;
-#  xdg.mime.enable = lib.mkForce false;
-#  xdg.terminal-exec.enable = false;
-#
-#  fonts.enableDefaultPackages = false;
-#  fonts.packages = lib.mkForce [ pkgs.dejavu_fonts ];
-#
-#  services.xserver.desktopManager.session = lib.mkForce [
-#    {
-#      name = "none";
-#      bgSupport = true; # if this bit is false we pull in a lot of deps
-#      start = "";
-#    }
-#  ];
-#
-#  nixpkgs.overlays = [
-#    (_final: prev: {
-#      xdg-utils = prev.hello; # cheap fake xdg-utils that don't pull in Perl etc.
-#      imlib2Full = prev.imlib2Full.override { jxlSupport = false; };
-#    })
-#  ];
+  imports = [
+    (modulesPath + "/profiles/perlless.nix")
+  ];
 
+  system.forbiddenDependenciesRegexes = lib.mkForce [];
+
+  services.speechd.enable = false;
+  hardware.graphics.enable = false;
+  services.pipewire.enable = false;
+  services.libinput.enable = false;
+
+  nixpkgs.overlays = [
+    (final: prev: {
+      iproute2 = prev.iproute2.overrideAttrs (old: {
+        outputs = old.outputs ++ [ "scripts" ];
+        postInstall = old.postInstall or "" + ''
+          moveToOutput sbin/routel "$scripts"
+        '';
+      });
+
+      # cheaply patch away these packages as the
+      # NixOS modules don't make it easy for us
+      xdg-utils = prev.bash;
+      feh = prev.bash;
+    })
+  ];
+
+
+  fonts.enableDefaultPackages = false;
+  fonts.fontconfig.enable = false;
+  fonts.packages = lib.mkForce [ pkgs.dejavu_fonts ];
+
+  security.sudo.enable = false;
+  networking.firewall.enable = false;
 }

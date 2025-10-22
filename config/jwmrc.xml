@@ -1,0 +1,17 @@
+<JWM>
+  <RootMenu onroot="12">
+    <Program icon="utilities-terminal" label="Terminal">xterm</Program>
+    <Separator/>
+    <Restart label="Restart" icon="reload"/>
+    <Exit label="Exit" confirm="true" icon="exit"/>
+  </RootMenu>
+
+  <Tray x="0" y="-1" autohide="off" delay="1000">
+    <TrayButton label="Appliance">root:1</TrayButton>
+    <Spacer width="2"/>
+    <Pager labeled="true"/>
+    <TaskList maxwidth="256"/>
+    <Dock/>
+    <Clock format="%l:%M %p"><Button mask="123">exec:xclock</Button></Clock>
+  </Tray>
+</JWM>

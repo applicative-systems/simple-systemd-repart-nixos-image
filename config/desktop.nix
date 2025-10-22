@@ -19,5 +19,13 @@
       };
     };
   };
-  services.xserver.displayManager.startx.enable = true;
+  services.xserver.displayManager.startx = {
+    enable = true;
+    generateScript = true;
+    extraCommands = ''
+      cp ${./jwmrc.xml} $HOME/.jwmrc
+      xrdb $HOME/.Xresources
+    '';
+  };
+
 }
