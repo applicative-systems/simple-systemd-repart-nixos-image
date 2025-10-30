@@ -9,8 +9,6 @@
     (modulesPath + "/profiles/perlless.nix")
   ];
 
-  system.forbiddenDependenciesRegexes = lib.mkForce [];
-
   services.speechd.enable = false;
   hardware.graphics.enable = false;
   services.pipewire.enable = false;
