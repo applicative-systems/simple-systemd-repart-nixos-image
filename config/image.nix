@@ -50,6 +50,8 @@
 
   boot.initrd.systemd.repart.enable = true;
   boot.initrd.systemd.repart.device = "/dev/sda";
+  boot.initrd.systemd.services.systemd-repart.before = [ "sysroot-nix-store.mount" ];
+
   systemd.repart.partitions = {
     home = {
       Format = "ext4";
