@@ -50,7 +50,11 @@
 
   boot.initrd.systemd.repart.enable = true;
   boot.initrd.systemd.repart.device = "/dev/sda";
-  boot.initrd.systemd.services.systemd-repart.before = [ "sysroot-nix-store.mount" ];
+  services.systemd-repart.before = [
+    "sysroot-etc.mount"
+    "sysroot-nix-store.mount"
+    "sysroot-var.mount"
+  ];
 
   systemd.repart.partitions = {
     home = {
