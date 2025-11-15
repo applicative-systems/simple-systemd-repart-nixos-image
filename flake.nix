@@ -13,7 +13,9 @@
       nixosConfigurations.appliance = nixpkgs.lib.nixosSystem {
         modules = [
           ./config/configuration.nix
-          { nixpkgs.hostPlatform = system; }
+          ({ lib, ... }: {
+            nixpkgs.hostPlatform = "x86_64-linux";
+          })
         ];
       };
 

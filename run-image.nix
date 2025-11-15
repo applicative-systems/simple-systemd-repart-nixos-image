@@ -10,11 +10,10 @@ writeShellScriptBin "repart-image-qemu" ''
 
   DISK_IMAGE="demo-disk.raw"
 
-  if [[ ! -f "$DISK_IMAGE" ]]; then
-    cp ${image}/image.raw "$DISK_IMAGE"
-    chmod +w "$DISK_IMAGE"
-    ${qemu}/bin/qemu-img resize -f raw "$DISK_IMAGE" "+10G"
-  fi
+  rm -f "$DISK_IMAGE"
+  cp ${image}/image.raw "$DISK_IMAGE"
+  chmod +w "$DISK_IMAGE"
+  ${qemu}/bin/qemu-img resize -f raw "$DISK_IMAGE" "+10G"
 
   ${qemu}/bin/qemu-system-x86_64 \
     -smp 4 \
@@ -23,6 +22,6 @@ writeShellScriptBin "repart-image-qemu" ''
     -cpu host \
     -bios "${OVMF.fd}/FV/OVMF.fd" \
     -hda "$DISK_IMAGE" \
-    -serial stdio \
-    -display gtk
+    -nographic \
+    -serial mon:stdio
 ''
