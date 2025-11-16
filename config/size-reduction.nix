@@ -11,24 +11,6 @@
     (modulesPath + "/profiles/minimal.nix")
   ];
 
-#  boot.kernelPackages = pkgs.linuxPackagesFor ((pkgs.linuxKernel.manualConfig rec {
-#      inherit (pkgs.linux_testing) version src;
-#      modDirVersion = lib.versions.pad 3 version;
-#      configfile = ./kernelconfig;
-#      allowImportFromDerivation = false;
-#    }).overrideAttrs (_: {
-#      postInstall = ''
-#        mkdir -p $out/lib/modules/"$version"
-#        touch  $out/lib/modules/"$version"/modules.order
-#        touch  $out/lib/modules/"$version"/modules.builtin
-#        rm $out/System.map
-#      '';
-#    }));
-
-  #boot.initrd.availableKernelModules = lib.mkForce [ ];
-  #boot.kernelModules = lib.mkForce [ ];
-  #boot.initrd.kernelModules = lib.mkForce [ ];
-
   nixpkgs.overlays = [
     (final: prev: {
       black = final.writeShellScriptBin "black" ''
@@ -48,51 +30,51 @@
         enableGI = false;
       };
       systemd = prev.systemd.override {
-#        withAcl = false;
-#        withAnalyze = false;
-#        withApparmor = false;
-#        withAudit = false;
-#        withCoredump = false;
-#        withDocumentation = false;
-#        withFido2 = false;
-#        withGcrypt = false;
-#        withHomed = false;
-#        withHostnamed = false;
-#        withHwdb = false;
-#        withImportd = false;
-#        withLibBPF = false;
-#        withLibarchive = false;
-#        withLibidn2 = false;
-#        withLocaled = false;
-#        withMachined = false;
-#        withNetworkd = false;
-#        withNss = false;
-#        withOomd = false;
-#        withPCRE2 = false;
-#        withPasswordQuality = false;
-#        withPolkit = false;
-#        withPortabled = false;
-#        withRemote = false;
-#        withResolved = false;
-#        withShellCompletions = false;
-#        withSysusers = false;
-#        withTimedated = false;
-#        withTimesyncd = false;
-#        withTpm2Tss = false;
-#        withUserDb = false;
-#        withVmspawn = false;
-#        # Needed
-#        withPam = false;
-#        withCompression = true;
-#        withLogind = false;
-#        withQrencode = true;
-#        withUkify = false;
-#        withEfi = true;
-#        withCryptsetup = true;
-#        withRepart = true;
-#        withSysupdate = false;
-#        withOpenSSL = false;
-#        withBootloader = true;
+        withAcl = false;
+        withAnalyze = false;
+        withApparmor = false;
+        withAudit = false;
+        withCoredump = false;
+        withDocumentation = false;
+        withFido2 = false;
+        withGcrypt = false;
+        withHomed = false;
+        withHostnamed = false;
+        withHwdb = false;
+        withImportd = false;
+        withLibBPF = false;
+        withLibarchive = false;
+        withLibidn2 = false;
+        withLocaled = false;
+        withMachined = false;
+        withNetworkd = false;
+        withNss = false;
+        withOomd = false;
+        withPCRE2 = false;
+        withPasswordQuality = false;
+        withPolkit = false;
+        withPortabled = false;
+        withRemote = false;
+        withResolved = false;
+        withShellCompletions = false;
+        withSysusers = false;
+        withTimedated = false;
+        withTimesyncd = false;
+        withTpm2Tss = false;
+        withUserDb = false;
+        withVmspawn = false;
+        # Needed
+        withPam = false;
+        withCompression = true;
+        withLogind = false;
+        withQrencode = true;
+        withUkify = false;
+        withEfi = true;
+        withCryptsetup = true;
+        withRepart = true;
+        withSysupdate = false;
+        withOpenSSL = false;
+        withBootloader = true;
       };
     })
   ];

@@ -4,7 +4,7 @@
     (modulesPath + "/profiles/image-based-appliance.nix")
     ./filesystems.nix
     ./image.nix
-    #./size-reduction.nix
+    ./size-reduction.nix
     ./kernel-without-modules.nix
   ];
 
