@@ -14,7 +14,7 @@
 #      '';
     }));
 
-  boot.initrd.availableKernelModules = lib.mkForce [ ];
-  boot.kernelModules = lib.mkForce [ ];
-  boot.initrd.kernelModules = lib.mkForce [ ];
+  #boot.initrd.availableKernelModules = lib.mkForce [ ];
+  #boot.kernelModules = lib.mkForce [ ];
+  #boot.initrd.kernelModules = lib.mkForce [ ];
 }
