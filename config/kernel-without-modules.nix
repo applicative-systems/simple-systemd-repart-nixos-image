@@ -6,15 +6,15 @@
       configfile = ./kernelconfig;
       allowImportFromDerivation = false;
     }).overrideAttrs (_: {
-#      postInstall = ''
-#        mkdir -p $out/lib/modules/"$version"
-#        touch  $out/lib/modules/"$version"/modules.order
-#        touch  $out/lib/modules/"$version"/modules.builtin
-#        rm $out/System.map
-#      '';
+      postInstall = ''
+        mkdir -p $out/lib/modules/"$version"
+        touch  $out/lib/modules/"$version"/modules.order
+        touch  $out/lib/modules/"$version"/modules.builtin
+        rm $out/System.map
+      '';
     }));
 
-  #boot.initrd.availableKernelModules = lib.mkForce [ ];
-  #boot.kernelModules = lib.mkForce [ ];
-  #boot.initrd.kernelModules = lib.mkForce [ ];
+  boot.initrd.availableKernelModules = lib.mkForce [ ];
+  boot.kernelModules = lib.mkForce [ ];
+  boot.initrd.kernelModules = lib.mkForce [ ];
 }
